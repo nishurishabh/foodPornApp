@@ -1,1 +1,14 @@
 
+<a href="#" class="list-group-item" (click)="onSelected()">
+    <div class="row">
+      <div class="col-auto">
+           <h4 class="list-group-item-heading"> {{recipe.name}}</h4>
+           <p class="list-group-item-text"> {{recipe.description}} </p>
+      </div>
+      <div class="col-auto">
+           <span ><img [src]="recipe.imagePath" width="100" alt="gj"
+           class="img-responsive img-thumbnail"
+           style="max-height: 50px"></span>
+      </div>
+  </div>
+  </a>

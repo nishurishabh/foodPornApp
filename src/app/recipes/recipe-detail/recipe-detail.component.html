@@ -1,32 +1,32 @@
 <div class="row">
   <div class="col-xs">
-     <img src="https://i.pinimg.com/736x/ca/cf/e6/cacfe64e10475da2450816b3aee627c4--cola-song-inna.jpg" alt="inna" class="img-fluid rounded mx-auto d-block" height=200 width=200 >
+     <img src="{{recipe.imagePath}}" alt="{{recipe.description}}" height=200 width=250>
   </div>
 </div>
 <div class="row">
     <div class="col-xs">
-      <h1 class="display-3"> Recipe Name</h1>
+      <h1 class="display-3"> {{recipe.name}} </h1>
     </div>
   </div>
-  <div class="row">
-      <div class="col-xs">
-          <div class="btn-group">
-              <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Manage List
-              </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-              </div>
-            </div>
+   <div class="row">
+     <div class="col-xs">
+       
+      <div class="dropdown" customdropdown>
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Shopping List</a>
+          <a class="dropdown-item" href="#">Edit Recipe</a>
+          <a class="dropdown-item" href="#">Delete Recipe</a>
+        </div>
       </div>
-    </div>
+
+     </div>
+   </div>
     <div class="row">
         <div class="col-xs">
-          <h3> Description </h3>
+          <h3 > {{ recipe.description }} </h3>
         </div>
       </div>
       <div class="row">

@@ -4,24 +4,13 @@
 </div></div>
 <div class="row mx-3rs">
     <div class="col-xs-12">
-        <a href="#" class="list-group-item" *ngFor="let recipe of recipes">
-            <div class="row">
-              <div class="col-auto">
-                   <h4 class="list-group-item-heading"> {{recipe.name}}</h4>
-                   <p class="list-group-item-text"> {{recipe.description}} </p>
-              </div>
-              <div class="col-auto">
-                   <span ><img [src]="recipe.imagePath" width="100" alt="gj"
-                   class="img-responsive img-thumbnail"
-                   style="max-height: 50px"></span>
-              </div>
-          </div>
-          </a>
         
+        <app-recipe-item *ngFor="let recipeEl
+         of recipes" [recipe]="recipeEl" 
+         (recipeSelected)="onRecipeSelected(recipeEl)"></app-recipe-item>
+
     
     </div>
 </div>
 
 </div>
-
-<div> Test</div>

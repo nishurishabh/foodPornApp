@@ -5,16 +5,22 @@
       <div class="row">
         <div class="col-sm-5">
           <label for="name"> Name </label>
-          <input type="text" class="form-control" id="name">
+          <input type="text" 
+          class="form-control" 
+          id="name"
+           #nameInput>
         </div>
         <div class="col-sm-2 form-group">
           <label for="amount"> Amount </label>
-          <input type="text" class="form-control" id="amount">
+          <input type="text" 
+          class="form-control" 
+          id="amount"
+          #amountInput>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <button type="submit" class="btn btn-success  mx-1"> Add </button>
+          <button type="button" class="btn btn-success  mx-1" (click) = "onAddItem()"> Add </button>
           <button type="button" class="btn btn-danger mx-1"> Delete </button>
           <button type="button" class="btn btn-primary mx-1"> Clear </button>
         </div>
