@@ -1,12 +1,14 @@
 <div class="container-fluid">
 <div class="row"><div class="col-xs-12">
-    <button class="btn btn-success"> New Recipe</button><hr>
+    <button class="btn btn-success" (click)="onNewRecipe()"> New Recipe</button><hr>
 </div></div>
 <div class="row mx-3rs">
     <div class="col-xs-12">
         
-        <app-recipe-item *ngFor="let recipeEl
-         of recipes" [recipe]="recipeEl" 
+        <app-recipe-item 
+        *ngFor="let recipeEl of recipes; let i = index" 
+         [recipe]="recipeEl" 
+         [index] = "i"
          ></app-recipe-item>
 
     

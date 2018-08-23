@@ -1,5 +1,8 @@
 
-<a href="#" class="list-group-item" (click)="onSelected()">
+<a style="cursor:pointer"
+[routerLink]="[index]" 
+routerLinkActive = "active"
+class="list-group-item">
     <div class="row">
       <div class="col-auto">
            <h4 class="list-group-item-heading"> {{recipe.name}}</h4>
