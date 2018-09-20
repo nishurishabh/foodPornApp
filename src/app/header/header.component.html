@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
   <!-- Brand -->
   <a class="navbar-brand" routerLink="/recipes"> Recipe Book </a>
@@ -10,14 +9,31 @@
     </li>
     <li class="nav-item">
       <a class="nav-link" routerLink="/shopping-list" routerLinkActive="active">Shopping List </a>
-    </li> </ul>
-
-    <!-- Dropdown -->
-  <ul class="navbar-nav ml-auto">
+    </li>
+   <ng-template [ngIf]="!authService.isAuthenticated()">
     <li class="nav-item navbar-right">
-         
+      <a class="nav-link" routerLink="/signup" routerLinkActive="active"> Register </a>
+    </li>
+    <li class="nav-item navbar-right">
+      <a class="nav-link" routerLink="/signin" routerLinkActive="active"> Login </a>
+    </li>
+   </ng-template>
+  </ul>
+  <li class="nav-item navbar-right">
+    <a style="cursor:pointer;
+               color:whitesmoke" 
+    *ngIf="authService.isAuthenticated()" 
+    (click)="onLogout()" 
+    active> Logout </a>
+  </li>
+
+  <!-- Dropdown -->
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item navbar-right" *ngIf="authService.isAuthenticated()">
+
       <div class="dropdown" customdropdown>
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
           Manage
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -27,4 +43,4 @@
       </div>
     </li>
   </ul>
-</nav> 
+</nav>
