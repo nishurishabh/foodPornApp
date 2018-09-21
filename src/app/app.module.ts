@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -23,21 +23,15 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth.guard.service';
+import { RecipesModule } from './recipes/recipe.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    DropdownDirective,
-    CustomDropdownDirective,
-    RecipeStartComponent,
-    RecipeEditComponent,
     SignupComponent,
     SigninComponent
   ],
@@ -46,14 +40,15 @@ import { AuthGuard } from './auth/auth.guard.service';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpModule
-    
+    HttpModule,
+    SharedModule,
+    RecipesModule
   ],
-  providers: [ShoppingListService, 
-              RecipeService, 
-              DataStorageService,
-              AuthService,
-              AuthGuard],
+  providers: [ShoppingListService,
+    RecipeService,
+    DataStorageService,
+    AuthService,
+    AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
