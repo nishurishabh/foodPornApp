@@ -22,6 +22,7 @@ export class RecipeEditComponent implements OnInit {
   id: number;
   editMode: Boolean = false;
   recipeForm: FormGroup;
+  get formData() { return <FormArray>this.recipeForm.get('ingredients'); }
   constructor(private route: ActivatedRoute,
     private recipeService: RecipeService,
     private router: Router) { }
@@ -110,4 +111,6 @@ export class RecipeEditComponent implements OnInit {
   onCancel() {
     this.router.navigate(['../'], { relativeTo: this.route });
   }
+
+  
 }
