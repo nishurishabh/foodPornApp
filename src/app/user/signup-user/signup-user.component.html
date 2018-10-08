@@ -1,0 +1,39 @@
+<div class="signup-form">
+  <form [formGroup]="signupFormUser" (ngSubmit)="onSubmit()">
+    <h2>Create an Account</h2>
+    <p class="hint-text">Sign up with your social media account or email address</p>
+    <div class="social-btn text-center">
+      <a class="btn btn-primary btn-lg">
+        <i class="fa fa-facebook"></i> Facebook
+      </a>
+      <a class="btn btn-info btn-lg">
+        <i class="fa fa-twitter"></i> Twitter
+      </a>
+      <a class="btn btn-danger btn-lg">
+        <i class="fa fa-google"></i> Google
+      </a>
+    </div>
+
+    <div class="or-seperator">
+      <b>or</b>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control input-lg" formControlName="username" placeholder="Username">
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control input-lg" formControlName="hash" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control input-lg" formControlName="firstName" placeholder="First Name">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control input-lg" formControlName="lastName" placeholder="Last Name">
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-success btn-lg btn-block signup-btn">Sign Up</button>
+    </div>
+  </form>
+  <div class="text-center">Already have an account?
+    <a routerLink="/loginUser">Login here</a>
+  </div>
+</div>

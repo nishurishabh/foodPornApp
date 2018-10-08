@@ -12,9 +12,26 @@ import { AppComponent } from './app.component';
 
 
 
+
+import { UserComponent } from './user/user.component';
+import { LoginUserComponent } from './user/login-user/login-user.component';
+import { SignupUserComponent } from './user/signup-user/signup-user.component';
+import { DashboardComponent } from './user/dashboard/dashboard.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './user/user.service';
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
+    UserComponent,
+    LoginUserComponent,
+    SignupUserComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,9 +40,11 @@ import { AppComponent } from './app.component';
     SharedModule,
     CoreModule,
     ShoppingListModule,
-    AuthModule
+    AuthModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
