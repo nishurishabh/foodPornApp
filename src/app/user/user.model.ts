@@ -1,12 +1,12 @@
 export class User {
     public username: string;
-    public hash: string;
+    public password: string;
     public firstName: string;
     public lastName: string;
 
-    constructor(username: string, hash: string, fn: string, ln: string){
+    constructor(username: string, password: string, fn: string, ln: string){
         this.username = username;
-        this.hash = hash;
+        this.password = password;
         this.firstName = fn;
         this.lastName = ln; 
     }

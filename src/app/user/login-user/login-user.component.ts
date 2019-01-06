@@ -21,16 +21,15 @@ export class LoginUserComponent {
 
   userFormLogin = new FormGroup({
     username: new FormControl(''),
-    hash: new FormControl('')
+    password: new FormControl('')
   });
 
   onAuthenticate() {
     const username = this.userFormLogin.value['username'];
-    const hash = this.userFormLogin.value['hash'];
+    const password = this.userFormLogin.value['password'];
 
-    this.userService.authenticateUser(username, hash).subscribe(
+    this.userService.authenticateUser(username, password).subscribe(
       (data: Data) => {
-         console.log(data.user.firstName + ' logged in!');
          this.router.navigate(['/dashboard']);
       },
      

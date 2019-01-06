@@ -20,7 +20,7 @@ export class SignupUserComponent implements OnInit {
 
   signupFormUser = new FormGroup({
     username: new FormControl(''),
-    hash: new FormControl(''),
+    password: new FormControl(''),
     firstName: new FormControl(''),
     lastName: new FormControl('')
   })
@@ -28,14 +28,14 @@ export class SignupUserComponent implements OnInit {
   onSubmit() {
     this.tmpUser = new User(
       this.signupFormUser.value['username'],
-      this.signupFormUser.value['hash'],
+      this.signupFormUser.value['password'],
       this.signupFormUser.value['firstName'],
       this.signupFormUser.value['lastName']
     )
 
     this.userService.addUser(this.tmpUser).subscribe(
       (data) => {
-        console.log(data);
+        
         this.router.navigate(['/dashboard']);
       }
     )
